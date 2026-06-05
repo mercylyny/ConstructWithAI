@@ -227,7 +227,7 @@ function UploadPage() {
             <div className="card glass-panel" style={{ marginBottom: "1rem" }}>
                 <h2>5. Project Cost Summary</h2>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                    {(estimationResult && estimationResult.stages || []).map((st, i) => (
+                    {((estimationResult && estimationResult.stages) || []).map((st, i) => (
                         <div key={i} style={{ display: 'flex', justifyContent: 'space-between' }}>
                             <div>{st.phase_name}</div>
                             <div style={{ fontWeight: 700 }}>{formatCurrency(st.cost)}</div>
