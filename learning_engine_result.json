@@ -1,0 +1,41 @@
+{
+  "learning_analysis": {
+    "learned_rules": [
+      {
+        "trigger_pattern": "L00",
+        "action": "Auto-correct to '100'",
+        "confidence_adjustment": 0.15,
+        "scope": "OCR"
+      },
+      {
+        "trigger_pattern": "23O",
+        "action": "Auto-correct to '230'",
+        "confidence_adjustment": 0.15,
+        "scope": "OCR"
+      },
+      {
+        "trigger_pattern": "Thickness 100mm",
+        "action": "Default to LOAD_BEARING for this building type",
+        "confidence_adjustment": 0.2,
+        "scope": "INTERPRETATION"
+      },
+      {
+        "trigger_pattern": "Global Volume Calculation",
+        "action": "Apply 8.0% variance buffer",
+        "confidence_adjustment": -0.05,
+        "scope": "ESTIMATION"
+      }
+    ],
+    "future_guidance": {
+      "auto_apply": [
+        "OCR string replacement: L00 -> 100",
+        "OCR string replacement: 23O -> 230",
+        "Apply 8.0% waste/variance buffer based on past audit."
+      ],
+      "require_human": [
+        "Verify Load Bearing status for 100mm walls in Industrial Warehouse buildings."
+      ]
+    },
+    "engineering_note": "Intelligence Update: Patterns identified from verified human audit. Rules extracted are weighted towards engineering safety and regional construction norms."
+  }
+}

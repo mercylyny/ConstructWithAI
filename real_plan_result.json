@@ -1,0 +1,23 @@
+{
+  "filename": "NANSANA LAYOUT.pdf",
+  "status": "SUCCESS",
+  "failed_step": null,
+  "failure_reason": null,
+  "extracted_text": "\n...",
+  "wall_count": 0,
+  "total_cost": 0.0,
+  "readiness_status": "NOT_READY",
+  "readiness_score": 0.22,
+  "boq_pdf_path": null,
+  "boq_excel_path": "C:\\Users\\MUYINDA PETER\\Desktop\\pro\\outputs\\exports\\boq_export_2ac67889.xlsx",
+  "narrative_report": "FINAL BOQ INTELLIGENCE REPORT\n=============================\n\nSECTION 1: PROJECT OVERVIEW\n------------------------------\nThis report presents an AI-assisted Bill of Quantities (BOQ) for the detailed construction estimation.\nScope: Masonry and Structural Materials.\nData Sources: OCR Plan Interpretation, Semantic Processing, and Automated Costing.\nBasis of Estimate: No specific wall segments detailed.\n\nSECTION 2: QUANTITY SUMMARY\n------------------------------\nTotal Wall Length: 0.00 m\n\nSECTION 3: COST BREAKDOWN (UGX)\n------------------------------\nNo cost items generated.\n------------------------------------------------------------\nTOTAL PROJECT ESTIMATE:       UGX 0\n\nSECTION 4: ASSUMPTIONS & ENGINEERING JUDGMENT\n------------------------------\n- Using default market rates (Uganda Context). Prices may vary.\n- Mortar Mix Ratio assumed 1:4 (Cement:Sand) unless specified.\n- Standard wastage allowances included in unit rate analysis.\n\nSECTION 5: RISK & CONFIDENCE ASSESSMENT\n------------------------------\nConfidence Level: MEDIUM (Score: 0.22)\nIdentified Risks:\n[!] Moderate AI Confidence\n[!] No Wall Quantities Detected\n[!] No Cost Calculation Available\n[!] Used Generic Market Rates\nAnalysis Warnings:\n- OCR text is very short/sparse. Plan might be unclear.\n- No walls detected in the estimation.\n\nRecommendation:\n-> Field verification of measurements is recommended before procurement.\n\nSECTION 6: PROFESSIONAL DISCLAIMER\n------------------------------\nThis Bill of Quantities is an AI-assisted construction estimate generated\nbased on the provided input documentation. While derived from standard\nengineering principles:\n1. Final construction quantities must be verified by a licensed Quantity Surveyor.\n2. Actual site conditions and market rates may vary.\n3. This document is for Budgeting, Planning, and Preliminary Costing purposes only.\n\n[END OF REPORT]",
+  "intervention_needed": true,
+  "missing_critical_data": [
+    "Low Confidence",
+    "Measurements",
+    "Cost Data"
+  ],
+  "confidence_breakdown": {
+    "overall": 0.55
+  }
+}

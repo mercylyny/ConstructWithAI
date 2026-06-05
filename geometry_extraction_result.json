@@ -1,0 +1,763 @@
+{
+  "walls": [
+    {
+      "wall_id": "W1",
+      "length_m": 0.84,
+      "thickness_mm": 400,
+      "confidence": 0.7,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W2",
+      "length_m": 0.78,
+      "thickness_mm": 400,
+      "confidence": 0.7,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W3",
+      "length_m": 0.82,
+      "thickness_mm": 300,
+      "confidence": 0.85,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W4",
+      "length_m": 3.72,
+      "thickness_mm": 400,
+      "confidence": 0.7,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W5",
+      "length_m": 0.83,
+      "thickness_mm": 400,
+      "confidence": 0.7,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W6",
+      "length_m": 0.89,
+      "thickness_mm": 300,
+      "confidence": 0.85,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W7",
+      "length_m": 0.84,
+      "thickness_mm": 300,
+      "confidence": 0.85,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W8",
+      "length_m": 2.76,
+      "thickness_mm": 150,
+      "confidence": 0.85,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W9",
+      "length_m": 0.81,
+      "thickness_mm": 150,
+      "confidence": 0.85,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W10",
+      "length_m": 3.65,
+      "thickness_mm": 200,
+      "confidence": 0.85,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W11",
+      "length_m": 0.85,
+      "thickness_mm": 150,
+      "confidence": 0.85,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W12",
+      "length_m": 0.74,
+      "thickness_mm": 150,
+      "confidence": 0.85,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W13",
+      "length_m": 0.89,
+      "thickness_mm": 400,
+      "confidence": 0.7,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W14",
+      "length_m": 0.81,
+      "thickness_mm": 400,
+      "confidence": 0.7,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W15",
+      "length_m": 0.79,
+      "thickness_mm": 400,
+      "confidence": 0.7,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W16",
+      "length_m": 0.84,
+      "thickness_mm": 300,
+      "confidence": 0.85,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W17",
+      "length_m": 0.83,
+      "thickness_mm": 300,
+      "confidence": 0.85,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W18",
+      "length_m": 1.06,
+      "thickness_mm": 300,
+      "confidence": 0.85,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W19",
+      "length_m": 0.75,
+      "thickness_mm": 200,
+      "confidence": 0.85,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W20",
+      "length_m": 0.71,
+      "thickness_mm": 200,
+      "confidence": 0.85,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W21",
+      "length_m": 0.69,
+      "thickness_mm": 200,
+      "confidence": 0.85,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W22",
+      "length_m": 0.75,
+      "thickness_mm": 200,
+      "confidence": 0.85,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W23",
+      "length_m": 3.69,
+      "thickness_mm": 150,
+      "confidence": 0.85,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W24",
+      "length_m": 3.95,
+      "thickness_mm": 150,
+      "confidence": 0.85,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W25",
+      "length_m": 11.02,
+      "thickness_mm": 400,
+      "confidence": 0.7,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W26",
+      "length_m": 7.25,
+      "thickness_mm": 400,
+      "confidence": 0.7,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W27",
+      "length_m": 0.75,
+      "thickness_mm": 400,
+      "confidence": 0.7,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W28",
+      "length_m": 3.4,
+      "thickness_mm": 400,
+      "confidence": 0.7,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W29",
+      "length_m": 0.66,
+      "thickness_mm": 400,
+      "confidence": 0.7,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W30",
+      "length_m": 2.65,
+      "thickness_mm": 150,
+      "confidence": 0.85,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W31",
+      "length_m": 3.2,
+      "thickness_mm": 400,
+      "confidence": 0.7,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W32",
+      "length_m": 0.76,
+      "thickness_mm": 400,
+      "confidence": 0.7,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W33",
+      "length_m": 0.63,
+      "thickness_mm": 150,
+      "confidence": 0.85,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W34",
+      "length_m": 0.7,
+      "thickness_mm": 200,
+      "confidence": 0.85,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W35",
+      "length_m": 0.74,
+      "thickness_mm": 150,
+      "confidence": 0.85,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W36",
+      "length_m": 0.79,
+      "thickness_mm": 400,
+      "confidence": 0.7,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W37",
+      "length_m": 0.91,
+      "thickness_mm": 400,
+      "confidence": 0.7,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W38",
+      "length_m": 0.81,
+      "thickness_mm": 400,
+      "confidence": 0.7,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W39",
+      "length_m": 0.83,
+      "thickness_mm": 400,
+      "confidence": 0.7,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W40",
+      "length_m": 0.82,
+      "thickness_mm": 300,
+      "confidence": 0.85,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W41",
+      "length_m": 0.74,
+      "thickness_mm": 300,
+      "confidence": 0.85,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W42",
+      "length_m": 0.76,
+      "thickness_mm": 300,
+      "confidence": 0.85,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W43",
+      "length_m": 0.86,
+      "thickness_mm": 300,
+      "confidence": 0.85,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W44",
+      "length_m": 0.74,
+      "thickness_mm": 300,
+      "confidence": 0.85,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W45",
+      "length_m": 2.7,
+      "thickness_mm": 400,
+      "confidence": 0.7,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W46",
+      "length_m": 0.72,
+      "thickness_mm": 300,
+      "confidence": 0.85,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W47",
+      "length_m": 0.84,
+      "thickness_mm": 300,
+      "confidence": 0.85,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W48",
+      "length_m": 0.68,
+      "thickness_mm": 300,
+      "confidence": 0.85,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W49",
+      "length_m": 0.86,
+      "thickness_mm": 300,
+      "confidence": 0.85,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W50",
+      "length_m": 2.75,
+      "thickness_mm": 150,
+      "confidence": 0.85,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W51",
+      "length_m": 1.52,
+      "thickness_mm": 300,
+      "confidence": 0.85,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W52",
+      "length_m": 2.11,
+      "thickness_mm": 300,
+      "confidence": 0.85,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W53",
+      "length_m": 1.52,
+      "thickness_mm": 400,
+      "confidence": 0.7,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W54",
+      "length_m": 3.29,
+      "thickness_mm": 400,
+      "confidence": 0.7,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W55",
+      "length_m": 3.64,
+      "thickness_mm": 400,
+      "confidence": 0.7,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W56",
+      "length_m": 1.85,
+      "thickness_mm": 400,
+      "confidence": 0.7,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W57",
+      "length_m": 0.68,
+      "thickness_mm": 400,
+      "confidence": 0.7,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W58",
+      "length_m": 0.64,
+      "thickness_mm": 400,
+      "confidence": 0.7,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W59",
+      "length_m": 4.34,
+      "thickness_mm": 400,
+      "confidence": 0.7,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W60",
+      "length_m": 4.35,
+      "thickness_mm": 400,
+      "confidence": 0.7,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W61",
+      "length_m": 1.81,
+      "thickness_mm": 300,
+      "confidence": 0.85,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W62",
+      "length_m": 1.82,
+      "thickness_mm": 300,
+      "confidence": 0.85,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W63",
+      "length_m": 0.74,
+      "thickness_mm": 150,
+      "confidence": 0.85,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W64",
+      "length_m": 3.21,
+      "thickness_mm": 200,
+      "confidence": 0.85,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W65",
+      "length_m": 3.27,
+      "thickness_mm": 230,
+      "confidence": 0.85,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W66",
+      "length_m": 1.8,
+      "thickness_mm": 300,
+      "confidence": 0.85,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W67",
+      "length_m": 1.85,
+      "thickness_mm": 300,
+      "confidence": 0.85,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W68",
+      "length_m": 3.9,
+      "thickness_mm": 300,
+      "confidence": 0.85,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W69",
+      "length_m": 4.09,
+      "thickness_mm": 300,
+      "confidence": 0.85,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W70",
+      "length_m": 3.48,
+      "thickness_mm": 100,
+      "confidence": 0.85,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W71",
+      "length_m": 0.72,
+      "thickness_mm": 400,
+      "confidence": 0.7,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W72",
+      "length_m": 8.16,
+      "thickness_mm": 400,
+      "confidence": 0.7,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W73",
+      "length_m": 8.35,
+      "thickness_mm": 400,
+      "confidence": 0.7,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W74",
+      "length_m": 3.36,
+      "thickness_mm": 300,
+      "confidence": 0.85,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W75",
+      "length_m": 5.27,
+      "thickness_mm": 300,
+      "confidence": 0.85,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W76",
+      "length_m": 0.64,
+      "thickness_mm": 300,
+      "confidence": 0.85,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W77",
+      "length_m": 0.69,
+      "thickness_mm": 400,
+      "confidence": 0.7,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W78",
+      "length_m": 0.82,
+      "thickness_mm": 400,
+      "confidence": 0.7,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W79",
+      "length_m": 0.7,
+      "thickness_mm": 400,
+      "confidence": 0.7,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W80",
+      "length_m": 0.74,
+      "thickness_mm": 300,
+      "confidence": 0.85,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W81",
+      "length_m": 0.66,
+      "thickness_mm": 300,
+      "confidence": 0.85,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W82",
+      "length_m": 0.82,
+      "thickness_mm": 300,
+      "confidence": 0.85,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W83",
+      "length_m": 0.81,
+      "thickness_mm": 300,
+      "confidence": 0.85,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W84",
+      "length_m": 0.76,
+      "thickness_mm": 400,
+      "confidence": 0.7,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W85",
+      "length_m": 0.83,
+      "thickness_mm": 300,
+      "confidence": 0.85,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W86",
+      "length_m": 0.76,
+      "thickness_mm": 300,
+      "confidence": 0.85,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W87",
+      "length_m": 0.9,
+      "thickness_mm": 300,
+      "confidence": 0.85,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W88",
+      "length_m": 0.83,
+      "thickness_mm": 300,
+      "confidence": 0.85,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W89",
+      "length_m": 0.83,
+      "thickness_mm": 300,
+      "confidence": 0.85,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W90",
+      "length_m": 0.89,
+      "thickness_mm": 300,
+      "confidence": 0.85,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W91",
+      "length_m": 0.74,
+      "thickness_mm": 200,
+      "confidence": 0.85,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W92",
+      "length_m": 1.92,
+      "thickness_mm": 150,
+      "confidence": 0.85,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W93",
+      "length_m": 0.66,
+      "thickness_mm": 150,
+      "confidence": 0.85,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W94",
+      "length_m": 1.75,
+      "thickness_mm": 150,
+      "confidence": 0.85,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W95",
+      "length_m": 3.72,
+      "thickness_mm": 400,
+      "confidence": 0.7,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W96",
+      "length_m": 0.81,
+      "thickness_mm": 400,
+      "confidence": 0.7,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W97",
+      "length_m": 4.01,
+      "thickness_mm": 150,
+      "confidence": 0.85,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W98",
+      "length_m": 0.0,
+      "thickness_mm": 200,
+      "confidence": 0.85,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W99",
+      "length_m": 0.01,
+      "thickness_mm": 150,
+      "confidence": 0.85,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W100",
+      "length_m": 0.02,
+      "thickness_mm": 150,
+      "confidence": 0.85,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W101",
+      "length_m": 0.04,
+      "thickness_mm": 100,
+      "confidence": 0.85,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W102",
+      "length_m": 0.02,
+      "thickness_mm": 150,
+      "confidence": 0.85,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W103",
+      "length_m": 0.02,
+      "thickness_mm": 200,
+      "confidence": 0.85,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W104",
+      "length_m": 0.03,
+      "thickness_mm": 150,
+      "confidence": 0.85,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W105",
+      "length_m": 0.68,
+      "thickness_mm": 400,
+      "confidence": 0.7,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W106",
+      "length_m": 0.01,
+      "thickness_mm": 400,
+      "confidence": 0.7,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W107",
+      "length_m": 0.01,
+      "thickness_mm": 300,
+      "confidence": 0.85,
+      "source": "geometry"
+    },
+    {
+      "wall_id": "W108",
+      "length_m": 0.01,
+      "thickness_mm": 300,
+      "confidence": 0.85,
+      "source": "geometry"
+    }
+  ],
+  "detected_rooms": 11,
+  "scale_confidence": 0.5,
+  "geometry_quality": "GOOD"
+}

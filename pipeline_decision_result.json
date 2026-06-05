@@ -1,0 +1,19 @@
+{
+  "pipeline_decision": {
+    "path": "MANUAL_FIRST",
+    "confidence_level": "HIGH",
+    "actions": {
+      "estimate_from_plan": false,
+      "estimate_from_ocr": false,
+      "manual_input_required": true,
+      "manual_verification_required": false,
+      "materials_detailed": false,
+      "cost_estimation": false,
+      "boq_reports": false
+    },
+    "risk_flags": [
+      "LOW_OCR_QUALITY"
+    ],
+    "reasoning": "Insufficient OCR intelligence or low confidence detected. Switching to Manual-First mode for safety."
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "trace_report": {
+    "input_quality_summary": "The uploaded plan yielded 0 discrete measurements via OCR parsing. Data density is graded based on a cleaned character count of 16. Weak OCR density detected. Textual data is insufficient for autonomous parsing.",
+    "pipeline_decisions_taken": "System defaulted to Manual-First mode. Data quality markers fell below safety thresholds, prioritizing professional oversight to prevent estimating errors.",
+    "assumptions_applied": [
+      "Standard Wall Height of 3.0m applied where vertical annotations were missing.",
+      "Internal walls assumed non-load bearing unless thickness exceeded 200mm.",
+      "All measurements assumed to be in millimeters (mm) per standard architectural convention."
+    ],
+    "risks_and_limitations": [
+      "CRITICAL: Low data confidence ( < 30% ). High risk of dimension fabrication.",
+      "Limitation: System currently ignores structural reinforcement schedules."
+    ],
+    "recommendation": "RE-MEASURE. Inadequate digital fidelity for reliable estimation. Manual measuring or re-upload of high-resolution plan required."
+  }
+}

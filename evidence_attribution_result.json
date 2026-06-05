@@ -1,0 +1,47 @@
+{
+  "attributed_values": [
+    {
+      "name": "Wall A Length",
+      "value": 4500.0,
+      "unit": "mm",
+      "source": "HUMAN",
+      "confidence": 1.0,
+      "evidence": [
+        {
+          "type": "text",
+          "reference": "User correction: 4600.0"
+        }
+      ],
+      "risk_flag": "LOW"
+    },
+    {
+      "name": "Wall Height",
+      "value": 3000.0,
+      "unit": "mm",
+      "source": "ASSUMPTION",
+      "confidence": 0.5,
+      "evidence": [
+        {
+          "type": "text",
+          "reference": "Wall Height: Standard 3000mm default applied."
+        }
+      ],
+      "risk_flag": "HIGH"
+    },
+    {
+      "name": "Partition Thickness",
+      "value": 115.0,
+      "unit": "mm",
+      "source": "LEARNED_RULE",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "type": "rule",
+          "reference": "Learned: Standard partition thickness for region"
+        }
+      ],
+      "risk_flag": "LOW"
+    }
+  ],
+  "engineering_commentary": "Evidence analysis complete. High-risk values identified where plan annotations were missing, requiring standard assumption fallbacks. Professional cross-check recommended for all 'HIGH' risk flags."
+}

@@ -1,0 +1,49 @@
+{
+  "wall_segments": [
+    {
+      "segment_id": "W1-S1",
+      "parent_wall_id": "W1",
+      "segment_length_m": 5.0,
+      "segment_height_m": 3.0,
+      "segment_net_area_m2": 15.0,
+      "normalized_thickness_mm": 230,
+      "original_thickness_mm": 225,
+      "segment_confidence": 0.74,
+      "review_flag": false
+    },
+    {
+      "segment_id": "W1-S2",
+      "parent_wall_id": "W1",
+      "segment_length_m": 5.0,
+      "segment_height_m": 3.0,
+      "segment_net_area_m2": 15.0,
+      "normalized_thickness_mm": 230,
+      "original_thickness_mm": 225,
+      "segment_confidence": 0.74,
+      "review_flag": false
+    },
+    {
+      "segment_id": "W2",
+      "parent_wall_id": "W2",
+      "segment_length_m": 4.5,
+      "segment_height_m": 3.0,
+      "segment_net_area_m2": 13.5,
+      "normalized_thickness_mm": 100,
+      "original_thickness_mm": 110,
+      "segment_confidence": 0.85,
+      "review_flag": false
+    },
+    {
+      "segment_id": "W3",
+      "parent_wall_id": "W3",
+      "segment_length_m": 5.0,
+      "segment_height_m": 3.0,
+      "segment_net_area_m2": 15.0,
+      "normalized_thickness_mm": 230,
+      "original_thickness_mm": 260,
+      "segment_confidence": 0.66,
+      "review_flag": true
+    }
+  ],
+  "segmentation_quality": "HIGH"
+}

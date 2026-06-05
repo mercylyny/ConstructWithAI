@@ -1,0 +1,29 @@
+{
+  "classified_segments": [
+    {
+      "segment_id": "W1-S1",
+      "masonry_type": "BRICK",
+      "masonry_role": "LOAD_BEARING",
+      "confidence": 0.8
+    },
+    {
+      "segment_id": "W2-S1",
+      "masonry_type": "BLOCK",
+      "masonry_role": "PARTITION",
+      "confidence": 0.9
+    },
+    {
+      "segment_id": "W3-S1",
+      "masonry_type": "BLOCK",
+      "masonry_role": "STRUCTURAL",
+      "confidence": 0.7
+    },
+    {
+      "segment_id": "W4-S1",
+      "masonry_type": "BLOCK",
+      "masonry_role": "LOAD_BEARING",
+      "confidence": 0.85
+    }
+  ],
+  "project_masonry_system": "HYBRID"
+}

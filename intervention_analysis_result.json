@@ -1,0 +1,20 @@
+{
+  "intervention_analysis": {
+    "intervention_required": true,
+    "required_inputs": [
+      {
+        "parameter": "Representative Longitudinal Dimension",
+        "unit": "mm",
+        "reason": "Insufficient ground-truth measurements found on plan to correlate vision data."
+      }
+    ],
+    "automation_allowed": [
+      "Geometric normalization",
+      "Standard height application",
+      "Wall Segment detection",
+      "Opening (Door/Window) spatial association",
+      "Preliminary Masonry Type mapping"
+    ],
+    "engineering_note": "Professional accountability alert: The digital fidelity of the uploaded plan requires targeted human input to ensure quantity accuracy meets construction standards."
+  }
+}

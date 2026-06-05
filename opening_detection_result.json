@@ -1,0 +1,425 @@
+{
+  "openings": [
+    {
+      "opening_id": "O_W4_1",
+      "wall_id": "W4",
+      "opening_type": "WINDOW",
+      "width_m": 1.2,
+      "height_m": 1.2,
+      "position_m": 0.93,
+      "opening_confidence": 0.8,
+      "reasoning": "Geometric gap of ~1200mm detected on W4"
+    },
+    {
+      "opening_id": "O_W4_W",
+      "wall_id": "W4",
+      "opening_type": "WINDOW",
+      "width_m": 1.0,
+      "height_m": 1.2,
+      "position_m": 2.79,
+      "opening_confidence": 0.75,
+      "reasoning": "Symmetric visual pattern within wall envelope"
+    },
+    {
+      "opening_id": "O_W10_1",
+      "wall_id": "W10",
+      "opening_type": "DOOR",
+      "width_m": 0.9,
+      "height_m": 2.1,
+      "position_m": 0.91,
+      "opening_confidence": 0.8,
+      "reasoning": "Geometric gap of ~900mm detected on W10"
+    },
+    {
+      "opening_id": "O_W23_1",
+      "wall_id": "W23",
+      "opening_type": "DOOR",
+      "width_m": 0.9,
+      "height_m": 2.1,
+      "position_m": 0.92,
+      "opening_confidence": 0.8,
+      "reasoning": "Geometric gap of ~900mm detected on W23"
+    },
+    {
+      "opening_id": "O_W24_1",
+      "wall_id": "W24",
+      "opening_type": "DOOR",
+      "width_m": 0.9,
+      "height_m": 2.1,
+      "position_m": 0.99,
+      "opening_confidence": 0.8,
+      "reasoning": "Geometric gap of ~900mm detected on W24"
+    },
+    {
+      "opening_id": "O_W25_1",
+      "wall_id": "W25",
+      "opening_type": "WINDOW",
+      "width_m": 1.2,
+      "height_m": 1.2,
+      "position_m": 2.75,
+      "opening_confidence": 0.8,
+      "reasoning": "Geometric gap of ~1200mm detected on W25"
+    },
+    {
+      "opening_id": "O_W25_W",
+      "wall_id": "W25",
+      "opening_type": "WINDOW",
+      "width_m": 1.0,
+      "height_m": 1.2,
+      "position_m": 8.27,
+      "opening_confidence": 0.75,
+      "reasoning": "Symmetric visual pattern within wall envelope"
+    },
+    {
+      "opening_id": "O_W26_1",
+      "wall_id": "W26",
+      "opening_type": "WINDOW",
+      "width_m": 1.2,
+      "height_m": 1.2,
+      "position_m": 1.81,
+      "opening_confidence": 0.8,
+      "reasoning": "Geometric gap of ~1200mm detected on W26"
+    },
+    {
+      "opening_id": "O_W26_W",
+      "wall_id": "W26",
+      "opening_type": "WINDOW",
+      "width_m": 1.0,
+      "height_m": 1.2,
+      "position_m": 5.44,
+      "opening_confidence": 0.75,
+      "reasoning": "Symmetric visual pattern within wall envelope"
+    },
+    {
+      "opening_id": "O_W28_1",
+      "wall_id": "W28",
+      "opening_type": "WINDOW",
+      "width_m": 1.2,
+      "height_m": 1.2,
+      "position_m": 0.85,
+      "opening_confidence": 0.8,
+      "reasoning": "Geometric gap of ~1200mm detected on W28"
+    },
+    {
+      "opening_id": "O_W28_W",
+      "wall_id": "W28",
+      "opening_type": "WINDOW",
+      "width_m": 1.0,
+      "height_m": 1.2,
+      "position_m": 2.55,
+      "opening_confidence": 0.75,
+      "reasoning": "Symmetric visual pattern within wall envelope"
+    },
+    {
+      "opening_id": "O_W31_1",
+      "wall_id": "W31",
+      "opening_type": "WINDOW",
+      "width_m": 1.2,
+      "height_m": 1.2,
+      "position_m": 0.8,
+      "opening_confidence": 0.8,
+      "reasoning": "Geometric gap of ~1200mm detected on W31"
+    },
+    {
+      "opening_id": "O_W31_W",
+      "wall_id": "W31",
+      "opening_type": "WINDOW",
+      "width_m": 1.0,
+      "height_m": 1.2,
+      "position_m": 2.4,
+      "opening_confidence": 0.75,
+      "reasoning": "Symmetric visual pattern within wall envelope"
+    },
+    {
+      "opening_id": "O_W45_W",
+      "wall_id": "W45",
+      "opening_type": "WINDOW",
+      "width_m": 1.0,
+      "height_m": 1.2,
+      "position_m": 2.03,
+      "opening_confidence": 0.75,
+      "reasoning": "Symmetric visual pattern within wall envelope"
+    },
+    {
+      "opening_id": "O_W52_W",
+      "wall_id": "W52",
+      "opening_type": "WINDOW",
+      "width_m": 1.0,
+      "height_m": 1.2,
+      "position_m": 1.58,
+      "opening_confidence": 0.75,
+      "reasoning": "Symmetric visual pattern within wall envelope"
+    },
+    {
+      "opening_id": "O_W54_1",
+      "wall_id": "W54",
+      "opening_type": "WINDOW",
+      "width_m": 1.2,
+      "height_m": 1.2,
+      "position_m": 0.82,
+      "opening_confidence": 0.8,
+      "reasoning": "Geometric gap of ~1200mm detected on W54"
+    },
+    {
+      "opening_id": "O_W54_W",
+      "wall_id": "W54",
+      "opening_type": "WINDOW",
+      "width_m": 1.0,
+      "height_m": 1.2,
+      "position_m": 2.47,
+      "opening_confidence": 0.75,
+      "reasoning": "Symmetric visual pattern within wall envelope"
+    },
+    {
+      "opening_id": "O_W55_1",
+      "wall_id": "W55",
+      "opening_type": "WINDOW",
+      "width_m": 1.2,
+      "height_m": 1.2,
+      "position_m": 0.91,
+      "opening_confidence": 0.8,
+      "reasoning": "Geometric gap of ~1200mm detected on W55"
+    },
+    {
+      "opening_id": "O_W55_W",
+      "wall_id": "W55",
+      "opening_type": "WINDOW",
+      "width_m": 1.0,
+      "height_m": 1.2,
+      "position_m": 2.73,
+      "opening_confidence": 0.75,
+      "reasoning": "Symmetric visual pattern within wall envelope"
+    },
+    {
+      "opening_id": "O_W59_1",
+      "wall_id": "W59",
+      "opening_type": "WINDOW",
+      "width_m": 1.2,
+      "height_m": 1.2,
+      "position_m": 1.08,
+      "opening_confidence": 0.8,
+      "reasoning": "Geometric gap of ~1200mm detected on W59"
+    },
+    {
+      "opening_id": "O_W59_W",
+      "wall_id": "W59",
+      "opening_type": "WINDOW",
+      "width_m": 1.0,
+      "height_m": 1.2,
+      "position_m": 3.25,
+      "opening_confidence": 0.75,
+      "reasoning": "Symmetric visual pattern within wall envelope"
+    },
+    {
+      "opening_id": "O_W60_1",
+      "wall_id": "W60",
+      "opening_type": "WINDOW",
+      "width_m": 1.2,
+      "height_m": 1.2,
+      "position_m": 1.09,
+      "opening_confidence": 0.8,
+      "reasoning": "Geometric gap of ~1200mm detected on W60"
+    },
+    {
+      "opening_id": "O_W60_W",
+      "wall_id": "W60",
+      "opening_type": "WINDOW",
+      "width_m": 1.0,
+      "height_m": 1.2,
+      "position_m": 3.26,
+      "opening_confidence": 0.75,
+      "reasoning": "Symmetric visual pattern within wall envelope"
+    },
+    {
+      "opening_id": "O_W64_1",
+      "wall_id": "W64",
+      "opening_type": "DOOR",
+      "width_m": 0.9,
+      "height_m": 2.1,
+      "position_m": 0.8,
+      "opening_confidence": 0.8,
+      "reasoning": "Geometric gap of ~900mm detected on W64"
+    },
+    {
+      "opening_id": "O_W65_1",
+      "wall_id": "W65",
+      "opening_type": "WINDOW",
+      "width_m": 1.2,
+      "height_m": 1.2,
+      "position_m": 0.82,
+      "opening_confidence": 0.8,
+      "reasoning": "Geometric gap of ~1200mm detected on W65"
+    },
+    {
+      "opening_id": "O_W65_W",
+      "wall_id": "W65",
+      "opening_type": "WINDOW",
+      "width_m": 1.0,
+      "height_m": 1.2,
+      "position_m": 2.45,
+      "opening_confidence": 0.75,
+      "reasoning": "Symmetric visual pattern within wall envelope"
+    },
+    {
+      "opening_id": "O_W68_1",
+      "wall_id": "W68",
+      "opening_type": "WINDOW",
+      "width_m": 1.2,
+      "height_m": 1.2,
+      "position_m": 0.97,
+      "opening_confidence": 0.8,
+      "reasoning": "Geometric gap of ~1200mm detected on W68"
+    },
+    {
+      "opening_id": "O_W68_W",
+      "wall_id": "W68",
+      "opening_type": "WINDOW",
+      "width_m": 1.0,
+      "height_m": 1.2,
+      "position_m": 2.92,
+      "opening_confidence": 0.75,
+      "reasoning": "Symmetric visual pattern within wall envelope"
+    },
+    {
+      "opening_id": "O_W69_1",
+      "wall_id": "W69",
+      "opening_type": "WINDOW",
+      "width_m": 1.2,
+      "height_m": 1.2,
+      "position_m": 1.02,
+      "opening_confidence": 0.8,
+      "reasoning": "Geometric gap of ~1200mm detected on W69"
+    },
+    {
+      "opening_id": "O_W69_W",
+      "wall_id": "W69",
+      "opening_type": "WINDOW",
+      "width_m": 1.0,
+      "height_m": 1.2,
+      "position_m": 3.07,
+      "opening_confidence": 0.75,
+      "reasoning": "Symmetric visual pattern within wall envelope"
+    },
+    {
+      "opening_id": "O_W70_1",
+      "wall_id": "W70",
+      "opening_type": "DOOR",
+      "width_m": 0.9,
+      "height_m": 2.1,
+      "position_m": 0.87,
+      "opening_confidence": 0.8,
+      "reasoning": "Geometric gap of ~900mm detected on W70"
+    },
+    {
+      "opening_id": "O_W72_1",
+      "wall_id": "W72",
+      "opening_type": "WINDOW",
+      "width_m": 1.2,
+      "height_m": 1.2,
+      "position_m": 2.04,
+      "opening_confidence": 0.8,
+      "reasoning": "Geometric gap of ~1200mm detected on W72"
+    },
+    {
+      "opening_id": "O_W72_W",
+      "wall_id": "W72",
+      "opening_type": "WINDOW",
+      "width_m": 1.0,
+      "height_m": 1.2,
+      "position_m": 6.12,
+      "opening_confidence": 0.75,
+      "reasoning": "Symmetric visual pattern within wall envelope"
+    },
+    {
+      "opening_id": "O_W73_1",
+      "wall_id": "W73",
+      "opening_type": "WINDOW",
+      "width_m": 1.2,
+      "height_m": 1.2,
+      "position_m": 2.09,
+      "opening_confidence": 0.8,
+      "reasoning": "Geometric gap of ~1200mm detected on W73"
+    },
+    {
+      "opening_id": "O_W73_W",
+      "wall_id": "W73",
+      "opening_type": "WINDOW",
+      "width_m": 1.0,
+      "height_m": 1.2,
+      "position_m": 6.26,
+      "opening_confidence": 0.75,
+      "reasoning": "Symmetric visual pattern within wall envelope"
+    },
+    {
+      "opening_id": "O_W74_1",
+      "wall_id": "W74",
+      "opening_type": "WINDOW",
+      "width_m": 1.2,
+      "height_m": 1.2,
+      "position_m": 0.84,
+      "opening_confidence": 0.8,
+      "reasoning": "Geometric gap of ~1200mm detected on W74"
+    },
+    {
+      "opening_id": "O_W74_W",
+      "wall_id": "W74",
+      "opening_type": "WINDOW",
+      "width_m": 1.0,
+      "height_m": 1.2,
+      "position_m": 2.52,
+      "opening_confidence": 0.75,
+      "reasoning": "Symmetric visual pattern within wall envelope"
+    },
+    {
+      "opening_id": "O_W75_1",
+      "wall_id": "W75",
+      "opening_type": "WINDOW",
+      "width_m": 1.2,
+      "height_m": 1.2,
+      "position_m": 1.32,
+      "opening_confidence": 0.8,
+      "reasoning": "Geometric gap of ~1200mm detected on W75"
+    },
+    {
+      "opening_id": "O_W75_W",
+      "wall_id": "W75",
+      "opening_type": "WINDOW",
+      "width_m": 1.0,
+      "height_m": 1.2,
+      "position_m": 3.95,
+      "opening_confidence": 0.75,
+      "reasoning": "Symmetric visual pattern within wall envelope"
+    },
+    {
+      "opening_id": "O_W95_1",
+      "wall_id": "W95",
+      "opening_type": "WINDOW",
+      "width_m": 1.2,
+      "height_m": 1.2,
+      "position_m": 0.93,
+      "opening_confidence": 0.8,
+      "reasoning": "Geometric gap of ~1200mm detected on W95"
+    },
+    {
+      "opening_id": "O_W95_W",
+      "wall_id": "W95",
+      "opening_type": "WINDOW",
+      "width_m": 1.0,
+      "height_m": 1.2,
+      "position_m": 2.79,
+      "opening_confidence": 0.75,
+      "reasoning": "Symmetric visual pattern within wall envelope"
+    },
+    {
+      "opening_id": "O_W97_1",
+      "wall_id": "W97",
+      "opening_type": "DOOR",
+      "width_m": 0.9,
+      "height_m": 2.1,
+      "position_m": 1.0,
+      "opening_confidence": 0.8,
+      "reasoning": "Geometric gap of ~900mm detected on W97"
+    }
+  ],
+  "opening_detection_quality": "HIGH"
+}

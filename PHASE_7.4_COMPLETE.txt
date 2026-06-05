@@ -1,0 +1,97 @@
+================================================================================
+PHASE 7.4: AUTOMATED QUANTITY CALCULATION - IMPLEMENTATION COMPLETE
+================================================================================
+
+STATUS: ✅ FULLY IMPLEMENTED
+
+Automated calculation of wall areas and volumes from interpreted construction
+data, enhanced with semantic understanding and default assumptions.
+
+================================================================================
+FILES CREATED
+================================================================================
+
+1. services/wall_quantity_calculator.py
+   - calculate_wall_quantities(walls, wall_height)
+   - Handles area (sqm) and volume (cum) calculations
+   - Applies thickness defaults (Partition: 0.15m, Load-bearing: 0.20m)
+
+2. test_wall_quantities.py
+   - Standalone verification script
+   - Validates calculation logic and total aggregation
+
+================================================================================
+FILES MODIFIED
+================================================================================
+
+1. routers/ai.py
+   - Updated /ai/estimate/walls endpoint
+   - Integrated full semantic pipeline:
+     OCR -> Post-processing -> Semantic Interpretation -> Quantity Calculation
+
+================================================================================
+CALCULATION LOGIC
+================================================================================
+
+1. Wall Thickness Defaults:
+   - "Partition" or "Internal" walls (INT): 0.15m
+   - Load-bearing / External / Default: 0.20m
+
+2. Formulas:
+   - Area (sqm) = Length (m) × Height (m)
+   - Volume (cum) = Area (sqm) × Thickness (m)
+
+3. Totals:
+   - Aggregates total_wall_area_sqm
+   - Aggregates total_wall_volume_cum
+
+================================================================================
+API INTEGRATION
+================================================================================
+
+POST /ai/estimate/walls
+
+Response Format:
+{
+  "filename": "plan.pdf",
+  "walls": [
+    {
+      "label": "Wall A",
+      "length_m": 4.5,
+      "height_m": 3.0,
+      "thickness_m": 0.2,
+      "area_sqm": 13.5,
+      "volume_cum": 2.7
+    },
+    ...
+  ],
+  "totals": {
+    "total_wall_area_sqm": 45.0,
+    "total_wall_volume_cum": 8.5
+  },
+  "message": "Wall quantity estimation completed successfully using semantic interpretation."
+}
+
+================================================================================
+TESTING
+================================================================================
+
+Run standalone test:
+```bash
+python test_wall_quantities.py
+```
+
+Results:
+- Wall A (Standard): 0.2m thickness applied ✅
+- INT 1 (Partition): 0.15m thickness applied ✅
+- Totals calculated correctly ✅
+
+================================================================================
+CONCLUSION
+================================================================================
+
+Phase 7.4 is complete. The system now automatically converts raw OCR text into
+precise physical quantities ready for material estimation (blocks/bricks).
+
+This replaces/enhances the previous basic estimation logic with a semantically
+aware pipeline.
