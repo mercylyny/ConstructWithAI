@@ -62,11 +62,13 @@ def preprocess_for_ocr(image_path: str, debug=False) -> Image.Image:
     # Step 7: Unconditional upscaling for OCR
     # Tesseract performs significantly better when text height is around 30-40 pixels.
     # Architectural text is often tiny. Scaling by 1.5x gives Tesseract more pixels to work with.
+    # However, on Render Free Tier (512MB RAM), scaling large PDFs causes OOM crashes.
     height, width = morph.shape
-    scale_factor = 1.5
+    scale_factor = 1.0 if os.environ.get("RENDER") else 1.5
     new_width = int(width * scale_factor)
     new_height = int(height * scale_factor)
-    morph = cv2.resize(morph, (new_width, new_height), interpolation=cv2.INTER_CUBIC)
+    if scale_factor != 1.0:
+        morph = cv2.resize(morph, (new_width, new_height), interpolation=cv2.INTER_CUBIC)
     
     # Debug: Save intermediate steps if requested
     if debug:

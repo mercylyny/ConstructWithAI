@@ -6,8 +6,14 @@ logger = logging.getLogger("yolo_service")
 
 # Try importing ultralytics, handle if not installed yet
 try:
-    from ultralytics import YOLO
-    ULTRALYTICS_AVAILABLE = True
+    import os
+    if os.environ.get("RENDER"):
+        # Disable YOLO on Render free tier to prevent 512MB OOM crashes
+        ULTRALYTICS_AVAILABLE = False
+        logger.warning("Render environment detected. Disabling YOLO to save memory.")
+    else:
+        from ultralytics import YOLO
+        ULTRALYTICS_AVAILABLE = True
 except ImportError:
     ULTRALYTICS_AVAILABLE = False
     logger.warning("ultralytics package not found. YOLO object detection will be disabled.")
