@@ -39,9 +39,12 @@ def preprocess_for_ocr(image_path: str, debug=False) -> Image.Image:
     enhanced = clahe.apply(gray)
     
     # Step 4: Noise reduction while preserving edges
-    # Bilateral filter reduces noise but keeps edges sharp (important for thin lines)
-    denoised = cv2.bilateralFilter(enhanced, d=9, sigmaColor=75, sigmaSpace=75)
-    
+    # Bilateral filter reduces noise but keeps edges sharp, however it is EXTREMELY slow.
+    # On Render Free Tier, we use Gaussian Blur instead to prevent timeouts.
+    if os.environ.get("RENDER"):
+        denoised = cv2.GaussianBlur(enhanced, (5, 5), 0)
+    else:
+        denoised = cv2.bilateralFilter(enhanced, d=9, sigmaColor=75, sigmaSpace=75)
     # Step 5: Adaptive thresholding
     # Increased blockSize to 31 (better for large architectural scans)
     # Increased C to 4 to aggressively remove gray background noise
