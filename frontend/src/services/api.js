@@ -2,7 +2,7 @@ export const API_BASE = "https://constructwithai.onrender.com";
 
 // Helper to get the JWT auth headers
 const getAuthHeaders = () => {
-    const token = localStorage.getItem('build_ai_token');
+    const token = localStorage.getItem('construct_ai_token');
     return token ? { 'Authorization': `Bearer ${token}` } : {};
 };
 

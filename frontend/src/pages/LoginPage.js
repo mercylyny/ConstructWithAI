@@ -77,8 +77,8 @@ function LoginPage({ onLogin }) {
         }
 
         const response = await registerUser(name, email, password);
-        localStorage.setItem('build_ai_token', response.access_token);
-        localStorage.setItem('build_ai_user', JSON.stringify(response.user));
+        localStorage.setItem('construct_ai_token', response.access_token);
+        localStorage.setItem('construct_ai_user', JSON.stringify(response.user));
         setSuccess("Account created successfully!");
         
         setTimeout(() => {
@@ -88,8 +88,8 @@ function LoginPage({ onLogin }) {
 
       } else if (view === 'login') {
         const response = await loginUser(email, password);
-        localStorage.setItem('build_ai_token', response.access_token);
-        localStorage.setItem('build_ai_user', JSON.stringify(response.user));
+        localStorage.setItem('construct_ai_token', response.access_token);
+        localStorage.setItem('construct_ai_user', JSON.stringify(response.user));
         setSuccess("Welcome back!");
         
         setTimeout(() => {
@@ -200,8 +200,8 @@ function LoginPage({ onLogin }) {
         
         try {
           const response = await googleLoginUser(account.name, account.email);
-          localStorage.setItem('build_ai_token', response.access_token);
-          localStorage.setItem('build_ai_user', JSON.stringify(response.user));
+          localStorage.setItem('construct_ai_token', response.access_token);
+          localStorage.setItem('construct_ai_user', JSON.stringify(response.user));
           setSuccess("Google Sign-In successful!");
           
           setTimeout(() => {
@@ -636,7 +636,7 @@ function LoginPage({ onLogin }) {
                     [Simulated SMTP Outbox]
                   </div>
                   <div className="email-header-field">To: <strong>{resetEmail}</strong></div>
-                  <div className="email-header-field">Subject: <strong>Reset your BuildAI Password</strong></div>
+                  <div className="email-header-field">Subject: <strong>Reset your ConstructAI Password</strong></div>
                   
                   <div style={{ 
                     marginTop: '1rem', 

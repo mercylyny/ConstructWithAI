@@ -155,7 +155,7 @@ pattern = r'\b([A-Z]{2,}(?:[/\-][A-Z]{2,})?(?:\s+[A-Z]{2,})?)\b'
 
 ## How to Verify the Fix
 
-1. **Re-upload your floor plan** in the BuildAI application
+1. **Re-upload your floor plan** in the ConstructAI application
 2. **Run AI Analysis** - should now show:
    - ✓ Multiple rooms detected (not just 1)
    - ✓ 2 bedrooms 

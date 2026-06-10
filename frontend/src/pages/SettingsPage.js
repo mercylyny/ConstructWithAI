@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../index.css";
 
 const SettingsPage = () => {
-  const [theme, setTheme] = useState(localStorage.getItem("build_ai_theme") || "dark");
+  const [theme, setTheme] = useState(localStorage.getItem("construct_ai_theme") || "dark");
   const [currentPassword, setCurrentPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -15,7 +15,7 @@ const SettingsPage = () => {
     } else {
       document.body.classList.remove("light-theme");
     }
-    localStorage.setItem("build_ai_theme", theme);
+    localStorage.setItem("construct_ai_theme", theme);
   }, [theme]);
 
   const handlePasswordChange = (e) => {

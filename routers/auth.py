@@ -154,7 +154,7 @@ def forgot_password(payload: PasswordResetRequest, db: Session = Depends(get_db)
             print("\n" + "="*80)
             print(" [SIMULATED SMS - OUTBOUND PASSWORD RESET CODE]")
             print(f" To (phone): {payload.phone}")
-            print(f" Message: Your BuildAI password reset code is {code}")
+            print(f" Message: Your ConstructAI password reset code is {code}")
             print("="*80 + "\n")
         else:
             # Default: email delivery using a secure URL token
@@ -178,7 +178,7 @@ def forgot_password(payload: PasswordResetRequest, db: Session = Depends(get_db)
             print("\n" + "="*80)
             print(" [SIMULATED SMTP SERVER - OUTBOUND PASSWORD RESET EMAIL]")
             print(f" To: {user.email}")
-            print(" Subject: Reset your BuildAI Password")
+            print(" Subject: Reset your ConstructAI Password")
             print(f" Secure Reset Link: {reset_link}")
             print("="*80 + "\n")
 

@@ -104,7 +104,7 @@ const NavUserProfile = ({ onLogout, onNavigate }) => {
   const ref = useRef(null);
 
   const storedUser = (() => {
-    try { return JSON.parse(localStorage.getItem("build_ai_user") || "{}"); }
+    try { return JSON.parse(localStorage.getItem("construct_ai_user") || "{}"); }
     catch { return {}; }
   })();
 
@@ -176,19 +176,19 @@ function App() {
   const [searchQuery, setSearchQuery]        = useState("");
 
   useEffect(() => {
-    const token = localStorage.getItem("build_ai_token");
+    const token = localStorage.getItem("construct_ai_token");
     if (token) { setIsAuthenticated(true); setCurrentPage("upload"); }
   }, []);
 
   const handleLogin = () => {
-    localStorage.setItem("build_ai_last_login", new Date().toISOString());
+    localStorage.setItem("construct_ai_last_login", new Date().toISOString());
     setIsAuthenticated(true);
     setCurrentPage("upload");
   };
 
   const handleLogout = () => {
-    localStorage.removeItem("build_ai_token");
-    localStorage.removeItem("build_ai_user");
+    localStorage.removeItem("construct_ai_token");
+    localStorage.removeItem("construct_ai_user");
     setIsAuthenticated(false);
     setCurrentPage("login");
   };

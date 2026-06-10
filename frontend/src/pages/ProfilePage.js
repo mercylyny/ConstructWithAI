@@ -3,7 +3,7 @@ import "../index.css";
 
 const ProfilePage = () => {
   const loadUser = () => {
-    try { return JSON.parse(localStorage.getItem("build_ai_user") || "{}"); }
+    try { return JSON.parse(localStorage.getItem("construct_ai_user") || "{}"); }
     catch { return {}; }
   };
 
@@ -34,7 +34,7 @@ const ProfilePage = () => {
     setForm({ ...draft });
     // Persist to localStorage so the navbar also reflects the new name
     const updated = { ...loadUser(), name: draft.name, email: draft.email, role: draft.role, timezone: draft.timezone, phone: draft.phone, company: draft.company };
-    localStorage.setItem("build_ai_user", JSON.stringify(updated));
+    localStorage.setItem("construct_ai_user", JSON.stringify(updated));
     setIsEditing(false);
     setSaved(true);
     setTimeout(() => setSaved(false), 3000);

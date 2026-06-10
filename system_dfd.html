@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Data Flow Diagrams</title>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ startOnLoad: true, theme: 'default' });
+    </script>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background-color: #f9f9f9; }
+        .diagram-container { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 40px; text-align: center; }
+        h1, h2 { color: #333; text-align: center; }
+        p { text-align: center; color: #666; }
+    </style>
+</head>
+<body>
+
+    <h1>Construction AI System - Data Flow Diagrams</h1>
+    
+    <div class="diagram-container">
+        <h2>LEVEL 0 - Context Diagram</h2>
+        <div class="mermaid">
+            flowchart LR
+                classDef entity fill:#d5e8d4,stroke:#82b366,stroke-width:2px,color:#000;
+                classDef process fill:#dae8fc,stroke:#6c8ebf,stroke-width:2px,color:#000,rx:10,ry:10;
+
+                User[User]:::entity
+                System(ConstructWithAI<br/>System):::process
+                OAuth[Google<br/>OAuth]:::entity
+
+                User -->|"Login credentials /<br/>Floor plan upload /<br/>BOQ request"| System
+                System -->|"JWT Token /<br/>Analysis results/<br/>BOQ PDF & Excel"| User
+                OAuth -->|"OAuth Token"| System
+        </div>
+    </div>
+
+    <div class="diagram-container">
+        <h2>LEVEL 1 DFD</h2>
+        <div class="mermaid">
+            flowchart LR
+                classDef process fill:#dae8fc,stroke:#6c8ebf,stroke-width:2px,color:#000;
+                classDef datastore fill:#fff2cc,stroke:#d6b656,stroke-width:2px,color:#000;
+
+                %% Processes (Circles)
+                P1((1.0<br/>Authentication)):::process
+                P2((2.0<br/>Plan Upload<br/>& Storage)):::process
+                P3((3.0<br/>OCR<br/>Analysis)):::process
+                P4((4.0<br/>AI Pipeline &<br/>Cost Estimation)):::process
+                P5((5.0<br/>BOQ<br/>Generator)):::process
+
+                %% Data Stores (Rectangles mimicking open-ended DFD datastores)
+                DS1[DS1: Users DB]:::datastore
+                DS2_Bot[DS2: Project DB]:::datastore
+                DS4[DS4: Building<br/>Summaries DB]:::datastore
+                
+                DS2_Top[DS2: Projects DB]:::datastore
+                DS3[DS3: Walls DB]:::datastore
+                
+                DS5_1[DS5: Estimations<br/>DB]:::datastore
+                DS5_2[DS5: Estimations<br/>DB]:::datastore
+
+                %% Process to Process flow with Labels
+                P1 -->|Auth Token| P2
+                P2 -->|Uploaded Image/PDF| P3
+                P3 -->|Extracted Text & Vectors| P4
+                P4 -->|Estimation Records| P5
+
+                %% Data Store interactions with Labels
+                DS1 -->|Valid Credentials| P1
+                DS2_Bot -->|Project Metadata| P2
+                DS4 -->|Building Context| P4
+                
+                P4 -->|Processed Project Data| DS2_Top
+                P4 -->|Wall Dimensions| DS3
+                P4 -->|Cost Breakdown| DS5_1
+                
+                P5 -->|Generated BOQ Document| DS5_2
+        </div>
+    </div>
+
+</body>
+</html>

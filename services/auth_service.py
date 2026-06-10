@@ -9,7 +9,7 @@ from fastapi import Depends, HTTPException, status
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 
 # Secret key for JWT signing. In production, this should come from an environment variable.
-SECRET_KEY = "build_ai_super_secret_signing_key_for_jwt_session_management_2026"
+SECRET_KEY = "construct_ai_super_secret_signing_key_for_jwt_session_management_2026"
 ALGORITHM = "HS256"
 ITERATIONS = 600000
 
