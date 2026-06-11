@@ -67,27 +67,50 @@ class PlanAnalyzer:
             # Preprocessing (PDF -> Image)
             image_paths = []
             full_text = ""
-            if filename.lower().endswith(".pdf"):
-                image_paths = convert_pdf_to_images_service(file_path, filename)
-            elif filename.lower().endswith(('.png', '.jpg', '.jpeg')):
-                image_paths = [file_path]
-            elif filename.lower().endswith(".txt"):
-                with open(file_path, "r", encoding="utf-8") as f:
-                    full_text = f.read()
+            
+            # Check for cached OCR text first to avoid slow PDF conversion and OCR
+            text_path = os.path.join(OCR_OUTPUT_DIR, f"{filename}.txt")
+            if os.path.exists(text_path) and os.path.exists(file_path) and os.path.getmtime(text_path) >= os.path.getmtime(file_path):
+                try:
+                    with open(text_path, "r", encoding="utf-8") as f:
+                        full_text = f.read()
+                    logger.info(f"Using cached OCR text for {filename}")
+                except Exception as ce:
+                    logger.warning(f"Error reading OCR cache: {ce}")
+
+            if not full_text:
+                if filename.lower().endswith(".pdf"):
+                    image_paths = convert_pdf_to_images_service(file_path, filename)
+                elif filename.lower().endswith(('.png', '.jpg', '.jpeg')):
+                    image_paths = [file_path]
+                elif filename.lower().endswith(".txt"):
+                    with open(file_path, "r", encoding="utf-8") as f:
+                        full_text = f.read()
+                else:
+                    result.status = "FAILED"
+                    return result
+                    
+                # OCR Extraction
+                if not filename.lower().endswith(".txt"):
+                    for img_path in image_paths:
+                        text = perform_ocr_on_image(img_path)
+                        full_text += text + "\n"
+                    
+                    with open(text_path, "w", encoding="utf-8") as f:
+                        f.write(full_text)
             else:
-                result.status = "FAILED"
-                return result
-                
-            # OCR Extraction
-            if not filename.lower().endswith(".txt"):
-                for img_path in image_paths:
-                    text = perform_ocr_on_image(img_path)
-                    full_text += text + "\n"
-                
-                text_path = os.path.join(OCR_OUTPUT_DIR, f"{filename}.txt")
-                with open(text_path, "w") as f:
-                    f.write(full_text)
-                
+                # If cached text is used, we still populate image_paths from the cached images directory so YOLO/etc can access them
+                if filename.lower().endswith(".pdf"):
+                    base_name = os.path.splitext(filename)[0]
+                    pdf_images_dir = os.path.join("outputs", "pdf_images")
+                    if os.path.exists(pdf_images_dir):
+                        prefix = f"{base_name}_page_"
+                        for f in sorted(os.listdir(pdf_images_dir)):
+                            if f.startswith(prefix) and f.lower().endswith(".png"):
+                                image_paths.append(os.path.abspath(os.path.join(pdf_images_dir, f)))
+                elif filename.lower().endswith(('.png', '.jpg', '.jpeg')):
+                    image_paths = [file_path]
+            
             result.extracted_text = full_text[:200] + "..."
             
             # Semantic Interpretation
@@ -349,56 +372,78 @@ class PipelineOrchestrator:
                 failure_reason=f"File not found: {filename}"
             )
 
-        # PDF Conversion
+        # PDF Conversion / OCR Caching
         image_paths = []
-        if filename.lower().endswith(".pdf"):
-            try:
-                image_paths = convert_pdf_to_images_service(file_path, filename)
-            except Exception as e:
-                return PipelineExecutionResult(
-                    status="FAILED",
-                    failed_step="PDF Conversion",
-                    failure_reason=f"Failed to convert PDF: {str(e)}"
-                )
-        elif filename.lower().endswith(('.png', '.jpg', '.jpeg')):
-            image_paths = [file_path]
-        elif filename.lower().endswith(".txt"):
-            pass
-        else:
-            return PipelineExecutionResult(
-                status="FAILED",
-                failed_step="Input Validation",
-                failure_reason=f"Unsupported file format: {filename}"
-            )
-
-        # OCR Extraction
         full_text = ""
-        if filename.lower().endswith(".txt"):
+        text_cache_path = os.path.join(OCR_OUTPUT_DIR, f"{filename}.txt")
+        
+        # Check cache first
+        if os.path.exists(text_cache_path) and os.path.exists(file_path) and os.path.getmtime(text_cache_path) >= os.path.getmtime(file_path):
             try:
-                with open(file_path, "r", encoding="utf-8") as f:
+                with open(text_cache_path, "r", encoding="utf-8") as f:
                     full_text = f.read()
-            except Exception as e:
+                logger.info(f"Using cached OCR text in run_pipeline for {filename}")
+                # We still populate image_paths for any subsequent steps
+                if filename.lower().endswith(".pdf"):
+                    base_name = os.path.splitext(filename)[0]
+                    pdf_images_dir = os.path.join("outputs", "pdf_images")
+                    if os.path.exists(pdf_images_dir):
+                        prefix = f"{base_name}_page_"
+                        for f in sorted(os.listdir(pdf_images_dir)):
+                            if f.startswith(prefix) and f.lower().endswith(".png"):
+                                image_paths.append(os.path.abspath(os.path.join(pdf_images_dir, f)))
+                elif filename.lower().endswith(('.png', '.jpg', '.jpeg')):
+                    image_paths = [file_path]
+            except Exception as ce:
+                logger.warning(f"Error reading OCR cache in run_pipeline: {ce}")
+
+        if not full_text:
+            if filename.lower().endswith(".pdf"):
+                try:
+                    image_paths = convert_pdf_to_images_service(file_path, filename)
+                except Exception as e:
+                    return PipelineExecutionResult(
+                        status="FAILED",
+                        failed_step="PDF Conversion",
+                        failure_reason=f"Failed to convert PDF: {str(e)}"
+                    )
+            elif filename.lower().endswith(('.png', '.jpg', '.jpeg')):
+                image_paths = [file_path]
+            elif filename.lower().endswith(".txt"):
+                pass
+            else:
                 return PipelineExecutionResult(
                     status="FAILED",
-                    failed_step="OCR",
-                    failure_reason=f"Failed to read text file: {str(e)}"
+                    failed_step="Input Validation",
+                    failure_reason=f"Unsupported file format: {filename}"
                 )
-        else:
-            try:
-                for img_path in image_paths:
-                    text = perform_ocr_on_image(img_path)
-                    full_text += text + "\n"
-                
-                # Save cached OCR text
-                text_cache_path = os.path.join(OCR_OUTPUT_DIR, f"{filename}.txt")
-                with open(text_cache_path, "w", encoding="utf-8") as f:
-                    f.write(full_text)
-            except Exception as e:
-                return PipelineExecutionResult(
-                    status="FAILED",
-                    failed_step="OCR",
-                    failure_reason=f"OCR processing failed: {str(e)}"
-                )
+
+            # OCR Extraction
+            if filename.lower().endswith(".txt"):
+                try:
+                    with open(file_path, "r", encoding="utf-8") as f:
+                        full_text = f.read()
+                except Exception as e:
+                    return PipelineExecutionResult(
+                        status="FAILED",
+                        failed_step="OCR",
+                        failure_reason=f"Failed to read text file: {str(e)}"
+                    )
+            else:
+                try:
+                    for img_path in image_paths:
+                        text = perform_ocr_on_image(img_path)
+                        full_text += text + "\n"
+                    
+                    # Save cached OCR text
+                    with open(text_cache_path, "w", encoding="utf-8") as f:
+                        f.write(full_text)
+                except Exception as e:
+                    return PipelineExecutionResult(
+                        status="FAILED",
+                        failed_step="OCR",
+                        failure_reason=f"OCR processing failed: {str(e)}"
+                    )
 
         # OCR Post-processing
         try:

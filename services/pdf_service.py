@@ -14,6 +14,23 @@ def convert_pdf_to_images_service(pdf_path: str, filename: str) -> List[str]:
     if not os.path.exists(pdf_path):
         raise FileNotFoundError(f"PDF file not found: {pdf_path}")
         
+    base_name = os.path.splitext(filename)[0]
+    
+    # Check if we have cached images and if they are up-to-date with the PDF
+    existing_images = []
+    if os.path.exists(OUTPUT_DIR):
+        prefix = f"{base_name}_page_"
+        for f in sorted(os.listdir(OUTPUT_DIR)):
+            if f.startswith(prefix) and f.lower().endswith(".png"):
+                existing_images.append(os.path.join(OUTPUT_DIR, f))
+                
+    if existing_images:
+        pdf_mtime = os.path.getmtime(pdf_path)
+        if all(os.path.getmtime(img) >= pdf_mtime for img in existing_images):
+            import logging
+            logging.getLogger("pipeline").info(f"Reusing cached PDF images for {filename}")
+            return [os.path.abspath(img) for img in existing_images]
+        
     # Attempt to auto-detect Poppler
     poppler_path = None
     potential_paths = [

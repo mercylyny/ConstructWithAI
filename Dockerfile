@@ -28,5 +28,5 @@ COPY . .
 # Expose the port Render expects
 EXPOSE 10000
 
-# Start the application
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "10000"]
+# Start the application with 2 workers to handle concurrent requests
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "10000", "--workers", "2"]

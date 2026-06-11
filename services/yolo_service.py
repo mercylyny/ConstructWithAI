@@ -6,14 +6,18 @@ logger = logging.getLogger("yolo_service")
 
 # Try importing ultralytics, handle if not installed yet
 try:
-    import os
-    if os.environ.get("RENDER"):
-        # Disable YOLO on Render free tier to prevent 512MB OOM crashes
-        ULTRALYTICS_AVAILABLE = False
-        logger.warning("Render environment detected. Disabling YOLO to save memory.")
-    else:
+    # On Render Free/Starter (512MB RAM), YOLO causes OOM crashes.
+    # On Render Standard+ (2GB+ RAM), you CAN enable it.
+    # Set YOLO_ENABLED=true in your Render environment variables to activate.
+    _yolo_enabled_env = os.environ.get("YOLO_ENABLED", "false").lower()
+    
+    if _yolo_enabled_env == "true":
         from ultralytics import YOLO
         ULTRALYTICS_AVAILABLE = True
+        logger.info("YOLO detection ENABLED (YOLO_ENABLED=true).")
+    else:
+        ULTRALYTICS_AVAILABLE = False
+        logger.info("YOLO detection DISABLED. Set YOLO_ENABLED=true in env vars to activate on Standard+ plan.")
 except ImportError:
     ULTRALYTICS_AVAILABLE = False
     logger.warning("ultralytics package not found. YOLO object detection will be disabled.")

@@ -3,6 +3,7 @@ import secrets
 import json
 import base64
 import time
+import os
 from datetime import datetime, timedelta, timezone
 from typing import Optional, Dict
 from fastapi import Depends, HTTPException, status
@@ -11,7 +12,7 @@ from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 # Secret key for JWT signing. In production, this should come from an environment variable.
 SECRET_KEY = "construct_ai_super_secret_signing_key_for_jwt_session_management_2026"
 ALGORITHM = "HS256"
-ITERATIONS = 600000
+ITERATIONS = int(os.environ.get("AUTH_ITERATIONS", 20000))
 
 # Bearer token extractor
 bearer_scheme = HTTPBearer(auto_error=False)

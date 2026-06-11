@@ -5,7 +5,13 @@ import os
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 from database.db import SessionLocal, Base, engine
+from models import project, wall, estimation, user, building_summary, estimation_phase
+from models.project import Project
+from models.wall import Wall
+from models.estimation import Estimation
 from models.user import User, PasswordResetToken
+from models.building_summary import BuildingSummaryRecord
+from models.estimation_phase import EstimationPhase
 
 Base.metadata.create_all(bind=engine)
 from schemas.auth import (

@@ -40,8 +40,9 @@ def preprocess_for_ocr(image_path: str, debug=False) -> Image.Image:
     
     # Step 4: Noise reduction while preserving edges
     # Bilateral filter reduces noise but keeps edges sharp, however it is EXTREMELY slow.
-    # On Render Free Tier, we use Gaussian Blur instead to prevent timeouts.
-    if os.environ.get("RENDER"):
+    # We default to Gaussian Blur (which runs in milliseconds) unless FAST_PREPROCESSING is set to false.
+    use_fast = os.environ.get("FAST_PREPROCESSING", "true").lower() == "true" or os.environ.get("RENDER")
+    if use_fast:
         denoised = cv2.GaussianBlur(enhanced, (5, 5), 0)
     else:
         denoised = cv2.bilateralFilter(enhanced, d=9, sigmaColor=75, sigmaSpace=75)
@@ -71,7 +72,7 @@ def preprocess_for_ocr(image_path: str, debug=False) -> Image.Image:
     new_width = int(width * scale_factor)
     new_height = int(height * scale_factor)
     if scale_factor != 1.0:
-        morph = cv2.resize(morph, (new_width, new_height), interpolation=cv2.INTER_CUBIC)
+        morph = cv2.resize(morph, (new_width, new_height), interpolation=cv2.INTER_LINEAR)
     
     # Debug: Save intermediate steps if requested
     if debug:

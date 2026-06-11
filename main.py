@@ -728,7 +728,12 @@ def parse_measurements_simple(text: str) -> List[WallMeasurement]:
 
 @app.get("/")
 async def root():
-    return {"message": "Construction AI backend is running"}
+    return {"message": "ConstructAI backend is running"}
+
+@app.get("/health")
+async def health():
+    """Health check endpoint. Used by Render and keep-alive cron jobs to prevent cold starts."""
+    return {"status": "ok", "service": "ConstructAI"}
 
 @app.post("/estimate/blocks", response_model=BlockEstimateResponse)
 async def estimate_blocks(request: BlockEstimateRequest):

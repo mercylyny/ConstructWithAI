@@ -75,6 +75,20 @@ def test_preprocessing():
     print("\n[STEP 3] Testing OCR with preprocessing...")
     try:
         import pytesseract
+        import shutil
+        tesseract_cmd = "tesseract"
+        possible_paths = [
+            r"C:\Program Files\Tesseract-OCR\tesseract.exe",
+            r"C:\Program Files (x86)\Tesseract-OCR\tesseract.exe",
+            os.path.expanduser(r"~\AppData\Local\Tesseract-OCR\tesseract.exe"),
+            r"C:\ProgramData\chocolatey\bin\tesseract.exe"
+        ]
+        if not shutil.which("tesseract"):
+            for p in possible_paths:
+                if os.path.exists(p):
+                    tesseract_cmd = p
+                    break
+        pytesseract.pytesseract.tesseract_cmd = tesseract_cmd
         
         # OCR on original image
         original_img = Image.open(test_image)
@@ -122,7 +136,7 @@ def test_preprocessing():
         if os.path.exists(test_image):
             os.remove(test_image)
             print("\n[OK] Cleaned up test image")
-
+ 
 if __name__ == "__main__":
     print("\nTesting Phase 7.3.1: Advanced OCR Pre-processing")
     print("This test runs independently of the FastAPI server\n")
@@ -132,9 +146,9 @@ if __name__ == "__main__":
         
         print("\n" + "="*70)
         if success:
-            print("✅ PHASE 7.3.1 VERIFICATION: PASSED")
+            print("[SUCCESS] PHASE 7.3.1 VERIFICATION: PASSED")
         else:
-            print("⚠️  PHASE 7.3.1 VERIFICATION: PARTIAL SUCCESS")
+            print("[WARNING] PHASE 7.3.1 VERIFICATION: PARTIAL SUCCESS")
         print("="*70 + "\n")
         
     except Exception as e:
@@ -142,5 +156,5 @@ if __name__ == "__main__":
         import traceback
         traceback.print_exc()
         print("\n" + "="*70)
-        print("❌ PHASE 7.3.1 VERIFICATION: FAILED")
+        print("[FAIL] PHASE 7.3.1 VERIFICATION: FAILED")
         print("="*70 + "\n")
